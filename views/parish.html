@@ -1,0 +1,45 @@
+<div class="container parish-page">
+  <div class="row">
+    <div class="col-md-12">
+        <h1 class="brand">
+          <a href="#/">Församlingar i Sverige genom tiderna</a>
+        </h1>
+        <hr>
+      </div>
+    <div class="col-md-12">
+      <h2>{{parish.name}}</h2>
+    </div>
+    <div class="col-md-12">
+      <dl class="dl-horizontal">
+        <dt ng-show="parish.forkod">ID</dt>
+        <dd ng-show="parish.forkod">{{parish.forkod}}</dd>
+        <dt ng-show="parish.namn">Namn</dt>
+        <dd ng-show="parish.namn">{{parish.namn}}</dd>
+        <dt ng-show="parish.indelning">Indelning</dt>
+        <dd ng-show="parish.indelning">{{parish.indelning}}</dd>
+        <dt ng-show="parish.county || parish.lan">Län</d>
+        <dd ng-show="parish.county">{{countName(parish.county)}}</dd>
+        <dd ng-show="parish.lan">{{parish.lan}}</dd>
+        <dt ng-show="parish.links[0]">Länkar</dt>
+        <dd ng-show="parish.links[0]" ng-repeat="link in parish.links">
+          <a ng-href="#/parish/{{link[0].id}}">{{link[0].name}}</a>
+        </dd>
+        <dt ng-show="parish.ovrigt">Övrigt</dt>
+        <dd ng-show="parish.ovrigt">{{parish.ovrigt}}</dd>
+        <dt ng-show="parish.pastoratskod">Pastoratskod</dt>
+        <dd ng-show="parish.pastoratskod">{{parish.pastoratskod}}</dd>
+        <dt ng-show="parish.pastorat">Pastorat</dt>
+        <dd ng-show="parish.pastorat">{{parish.pastorat}}</dd>
+        <dt ng-show="parish.fodelsebok">Födelsebok</dt>
+        <dd ng-show="parish.fodelsebok">{{parish.fodelsebok}}</dd>
+        <dt ng-show="parish.husforhorslangd">Husförhörslängd</dt>
+        <dd ng-show="parish.husforhorslangd">{{parish.husforhorslangd}}</dd>
+        <dt ng-show="parish.arkiv">Arkiv</dt>
+        <dd ng-show="parish.arkiv">{{parish.arkiv}}</dd>
+      </dl>
+    </div>
+    
+    <div id="map" class="col-md-12 parish-map"></div>
+    
+  </div>
+</div>
