@@ -1,0 +1,101 @@
+<div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h1>
+          Församlingar i Sverige genom tiderna
+        </h1>
+        <hr>
+      </div>
+    </div>
+    <div class="row" ng-hide="dataLoading">
+      <div class="col-md-12" ng-hide="dataLoading">
+        
+        <form class="form-inline" role="form">
+          <div class="form-group">
+              <input type="text" class="form-control" id="exampleInputEmail2" placeholder="Namn" ng-model="fulltext">
+          </div>
+          <div class="form-group">
+            <select class="form-control" ng-model="selected_county" ng-options="co.cname for co in counties">
+              <option value="">-- Län --</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="sr-only" for="exampleInputPassword2">Forkod</label>
+            <input type="number" class="form-control" id="exampleInputPassword2" placeholder="Forkod" ng-model = "search.forkod" min = "10000" max = "259999">
+          </div>
+          <button ng-click="clear()" class="btn btn-default">Rensa</button>
+        </form>
+        <p>
+          {{allPars = (parishes | filter: {county: selected_county.county}:true | filter: search.forkod | filter: filterText).length}}/{{parishes.length}}
+        </p>
+      
+      </div>
+
+      <div class="col-md-12" ng-hide="allPars <= 20">
+        <nav >
+          <ul class="pagination">
+            <li ng-class="{disabled: currentPage === 0}">
+              <a 
+                ng-disabled="currentPage === 0" aria-label="Previous" 
+                ng-click="newPage(currentPage-1, (currentPage -1 ) >= 0)"><span aria-hidden="true">«</span>
+              </a>
+            </li>
+            <li class="active"><a href="#">{{currentPage + 1 }}/{{allPars/pageSize | number:0}} <span class="sr-only">(current)</span></a></li>
+            
+            <li ng-class="{disabled: currentPage >= allPars/pageSize - 1}"><a ng-disabled="currentPage >= allPars/pageSize" aria-label="Next" ng-click="newPage(currentPage+1, (currentPage +1) <= (allPars/pageSize))"><span aria-hidden="true">»</span></a></li>
+          </ul>
+        </nav>    
+      </div>
+      <div class="col-md-12">
+        <div class="row" ng-repeat="par in filteredPars = (parishes | filter: {county: selected_county.county}:true | filter: search | filter: filterText | offset:currentPage*pageSize | limitTo:pageSize)" >
+          <hr>
+          <div class="col-md-3 list-title">
+            <div class="row">
+              <a ng-href="#/parish/{{par.pid}}">
+                <div class="col-xs-6 col-md-12"><strong>{{par.name}}</strong> <span class="hidden-md hidden-lg">{{par.forkod}}</span></div>
+                <div class="col-xs-6 col-md-12"><span class="visible-md-block visible-lg-block">{{par.forkod}}</span></div>
+              </a> 
+            </div>
+          </div>
+          <div class="col-md-9 list-body">
+            {{countName(par.county)}} <br>
+              <span ng-show="par.indelning"><strong>Indelning:</strong> {{par.indelning}}</span>
+              <span ng-show="par.namn"><strong>Namn:</strong> {{par.namn}}</span>
+              <span ng-show="par.lan"><strong>Län:</strong> {{par.lan}}</span>
+              <span ng-show="par.lan"><strong>Län:</strong> {{par.lan}}</span>
+              <span ng-show="par.ovrigt"><strong>Övrigt:</strong> {{par.ovrigt}}</span>
+              <span ng-show="par.pastorat"><strong>Pastorat:</strong> {{par.pastorat}}</span>
+              <span ng-repeat="link in par.links">
+              <a ng-href="#/parish/{{link[0].id}}">{{link[0].name}}</a>
+            </span>
+            
+          </div>
+        </div>
+        
+      </div>
+      <div class="col-md-12" ng-hide="allPars <= 20">
+        <nav class="pull-right">
+        <ul class="pagination">
+          <li ng-class="{disabled: currentPage === 0}">
+            <a 
+              ng-disabled="currentPage === 0" aria-label="Previous" 
+              ng-click="newPage(currentPage-1, (currentPage -1 ) >= 0)"><span aria-hidden="true">«</span>
+            </a>
+          </li>
+          <li class="active"><a href="#">{{currentPage + 1 }}/{{allPars/pageSize | number:0}} <span class="sr-only">(current)</span></a></li>
+          
+          <li ng-class="{disabled: currentPage >= allPars/pageSize - 1}"><a ng-disabled="currentPage >= allPars/pageSize" aria-label="Next" ng-click="newPage(currentPage+1, (currentPage +1) <= (allPars/pageSize))"><span aria-hidden="true">»</span></a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="col-md-12 well" ng-hide="filteredPars.length || dataLoading">
+      Inga resultat
+    </div>
+  </div>
+  <div class="row" ng-show="dataLoading">
+      
+      <div class="col-md-12 well" >
+        Laddar ...
+      </div>
+  </div>
+</div>

@@ -19,7 +19,7 @@ render_page <- function(clean = FALSE) {
   file.copy('js', 'output', recursive = TRUE)
   file.copy('css', 'output', recursive = TRUE)
   
-  if (!file.exists('output/data/parishes.json')) {
+  if (clean) {
     library(jsonlite)
     load('data/sfgt.rda')
 
@@ -27,8 +27,8 @@ render_page <- function(clean = FALSE) {
       writeLines(toJSON(a, pretty = F), sprintf('output/data/%d.json', a$pid))
     })
 
-    json <- sfgt[ ,c(1,4,6:14)]
-    writeLines(toJSON(sfgt, pretty = F), 'output/data/parishes.json')
+    json <- sfgt[ ,c(1,5, 7:11,13:15)]
+    writeLines(toJSON(json, pretty = F), 'output/data/parishes.json')
 
   }
   render('index.Rmd', output_dir='output')

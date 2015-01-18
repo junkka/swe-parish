@@ -13,7 +13,7 @@ parishApp.factory('Store', function() {
 parishApp.config(function ($routeProvider) {
     $routeProvider
       .when('/', {
-        templateUrl: 'views/main.html',
+        templateUrl: 'views/list.html',
         controller: 'MainCtrl'
       })
       .when('/parish/:pid', {
@@ -73,8 +73,9 @@ parishApp.controller('ParishCtrl', function ($scope, $http, $routeParams){
 
 
   $scope.countName = function(code){
-    if (code == undefined )
-      return null;
+    if (!code){
+      return '';
+    }
     var results = countiesStore.filter(function (entry) { return entry.county === code; });
     return  results[0].cname;
   }
@@ -139,6 +140,9 @@ parishApp.controller('MainCtrl', function($scope, $http, $timeout, Store) {
   $scope.counties = countiesStore;
   
   $scope.countName = function(code){
+    if (!code){
+      return 'Okänd';
+    }
     var results = $scope.counties.filter(function (entry) { return entry.county === code; });
     return  results[0].cname;
   }
