@@ -18,6 +18,7 @@ render_page <- function(clean = FALSE) {
   file.copy('views', 'output', recursive = TRUE)
   file.copy('js', 'output', recursive = TRUE)
   file.copy('css', 'output', recursive = TRUE)
+  file.copy('includes/robots.txt', 'output', recursive = TRUE)
   
   if (clean) {
     library(jsonlite)
@@ -27,7 +28,7 @@ render_page <- function(clean = FALSE) {
       writeLines(toJSON(a, pretty = F), sprintf('output/data/%d.json', a$pid))
     })
 
-    json <- sfgt[ ,c(1,5, 7:11,13:15)]
+    json <- sfgt[ ,c(1,5, 7:12,14:15)]
     writeLines(toJSON(json, pretty = F), 'output/data/parishes.json')
 
   }
