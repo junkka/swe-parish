@@ -73,7 +73,6 @@ parishApp.controller('ParishCtrl', function ($scope, $http, $routeParams){
 
 
   $scope.countName = function(code){
-    console.log('code:', code);
     if (!code){
       return '';
     }
@@ -150,7 +149,6 @@ parishApp.controller('MainCtrl', function($scope, $http, $timeout, Store) {
 
   $http({method: 'GET', url: 'data/parishes.json'}).
     success(function(d) {
-      console.log(d);
       $scope.parishes = d;
       $scope.dataLoading = false;
     }).
