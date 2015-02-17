@@ -59,15 +59,14 @@
           </div>
           <div class="col-md-9 list-body">
             {{countName(par.county)}} <br>
-              <span ng-show="par.indelning"><strong>Indelning:</strong> {{par.indelning}}</span>
-              <span ng-show="par.namn"><strong>Namn:</strong> {{par.namn}}</span>
-              <span ng-show="par.lan"><strong>Län:</strong> {{par.lan}}</span>
-              <span ng-show="par.lan"><strong>Län:</strong> {{par.lan}}</span>
-              <span ng-show="par.ovrigt"><strong>Övrigt:</strong> {{par.ovrigt}}</span>
-              <span ng-show="par.pastorat"><strong>Pastorat:</strong> {{par.pastorat}}</span>
-              <span ng-repeat="link in par.links">
+              <p ng-show="par.indelning"><strong>Indelning:</strong> {{par.indelning}}</p>
+              <p ng-show="par.namn"><strong>Namn:</strong> {{par.namn}}</p>
+              <p ng-show="par.lan"><strong>Län:</strong> {{par.lan}}</p>
+              <p ng-show="par.ovrigt"><strong>Övrigt:</strong> {{par.ovrigt}}</p>
+              <p ng-show="par.pastorat"><strong>Pastorat:</strong> {{par.pastorat}}</p>
+              <p ng-repeat="link in par.links">
               <a ng-href="#/parish/{{link[0].id}}">{{link[0].name}}</a>
-            </span>
+            </p>
             
           </div>
         </div>
