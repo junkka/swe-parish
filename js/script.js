@@ -149,9 +149,9 @@ parishApp.controller('MainCtrl', function($scope, $http, $timeout, Store) {
 
   $http({method: 'GET', url: 'data/parishes.json'}).
     success(function(d) {
-      d = d.filter(function(e){
-        return e.lan != undefined;
-      });
+      // d = d.filter(function(e){
+      //   return e.lan != undefined;
+      // });
       $scope.parishes = d;
       $scope.dataLoading = false;
     }).
