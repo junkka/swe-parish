@@ -1,1 +1,1 @@
-[{"pid":1352,"charid":"hedvig","forkod":58100,"name":"hedvig","county":"5","alias":"Ladugårdsland","links":[[{"id":2548,"name":"Norrköpings Hedvig"}]]}]
+[{"pid":1352,"charid":"hedvig","forkod":58100,"name":"hedvig","county":"5","alias":"Ladugårdsland","links":[[{"id":2548,"name":"Norrköpings Hedvig"}]],"nads":[{"nadkod":58102000,"socken":"Norrköpings hedvig","from":1613,"tom":9999,"rel":[{"nadkod":58101001,"socken":"Norrköpings sankt olai","relation":"pre","from":0,"tom":1612}]}]}]

@@ -1,1 +1,1 @@
-[{"pid":3237,"forkod":208200,"name":"Säter","ovrigt":"Säter -1642, se .","county":"20","links":[null]}]
+[{"pid":3237,"forkod":208200,"name":"Säter","ovrigt":"Säter -1642, se .","county":"20","links":[null],"nads":[{"nadkod":208201000,"socken":"Säter (w-län)","from":1952,"tom":9999,"rel":[{"nadkod":208201002,"socken":"Säters stads","relation":"pre","from":1642,"tom":1951},{"nadkod":208201003,"socken":"Säters lands","relation":"pre","from":1642,"tom":1951}]}]}]

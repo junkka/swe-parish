@@ -1,1 +1,1 @@
-[{"pid":3748,"charid":"tavelsjokbfd","forkod":248000,"indelning":"1926-01-01 bildat inom Umeå landsförsamling, 1962-12-31 upplöst vid församlingsdelning.","name":"Tavelsjö kbfd","county":"24","links":[null]}]
+[{"pid":3748,"charid":"tavelsjokbfd","forkod":248000,"indelning":"1926-01-01 bildat inom Umeå landsförsamling, 1962-12-31 upplöst vid församlingsdelning.","name":"Tavelsjö kbfd","county":"24","links":[null],"nads":[{"nadkod":248003000,"socken":"Tavelsjö","from":1963,"tom":9999,"rel":[{"nadkod":248002009,"socken":"Umeå lands","relation":"pre","from":1913,"tom":1962}]}]}]

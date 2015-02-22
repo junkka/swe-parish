@@ -1,1 +1,1 @@
-[{"pid":1906,"charid":"kulladal","forkod":128018,"indelning":"1969-01-01 utbruten ur Fosie.","name":"Kulladal","pastorat":"eget.","county":"12","links":[null]}]
+[{"pid":1906,"charid":"kulladal","forkod":128018,"indelning":"1969-01-01 utbruten ur Fosie.","name":"Kulladal","pastorat":"eget.","county":"12","links":[null],"nads":[{"nadkod":128018000,"socken":"Kulladal","from":1969,"tom":9999,"rel":[{"nadkod":128008001,"socken":"Fosie","relation":"pre","from":0,"tom":1968},{"nadkod":128007001,"socken":"Limhamn","relation":"pre","from":0,"tom":1968}]}]}]

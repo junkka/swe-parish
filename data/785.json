@@ -1,1 +1,1 @@
-[{"pid":785,"charid":"farsta","forkod":18025,"indelning":"1957 utbruten ur Enskede (och Brännkyrka).","name":"Farsta","pastorat":"eget.","county":"1","links":[null]}]
+[{"pid":785,"charid":"farsta","forkod":18025,"indelning":"1957 utbruten ur Enskede (och Brännkyrka).","name":"Farsta","pastorat":"eget.","county":"1","links":[null],"nads":[{"nadkod":18025000,"socken":"Farsta","from":1957,"tom":9999,"rel":[{"nadkod":18021003,"socken":"Brännkyrka","relation":"pre","from":1931,"tom":1956},{"nadkod":18034001,"socken":"Enskede","relation":"pre","from":1931,"tom":1956}]}]}]

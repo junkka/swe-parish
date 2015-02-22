@@ -1,1 +1,1 @@
-[{"pid":3998,"charid":"uppsala","forkod":38000,"name":"Uppsala","ovrigt":"se och .","county":"3","links":[[{"id":968,"name":"Gamla Uppsala"}],[{"id":3999,"name":"Uppsala domkyrkoförsamling"}]]}]
+[{"pid":3998,"charid":"uppsala","forkod":38000,"name":"Uppsala","ovrigt":"se och .","county":"3","links":[[{"id":968,"name":"Gamla Uppsala"}],[{"id":3999,"name":"Uppsala domkyrkoförsamling"}]],"nads":[{"nadkod":38001000,"socken":"Uppsala domkyrko","from":0,"tom":9999,"rel":[]}]}]

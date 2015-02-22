@@ -1,1 +1,1 @@
-[{"pid":3663,"charid":"Sundbyberg","forkod":18301,"indelning":"1909-05-01 utbruten ur Bromma.","name":"Sundbyberg","pastorat":"1909-05-01-1916 Bromma, 1916-05-01 - eget.","county":"1","links":[null]}]
+[{"pid":3663,"charid":"Sundbyberg","forkod":18301,"indelning":"1909-05-01 utbruten ur Bromma.","name":"Sundbyberg","pastorat":"1909-05-01-1916 Bromma, 1916-05-01 - eget.","county":"1","links":[null],"nads":[{"nadkod":18301000,"socken":"Sundbyberg","from":1909,"tom":9999,"rel":[{"nadkod":18027001,"socken":"Bromma (ab-län)","relation":"pre","from":0,"tom":1908}]}]}]

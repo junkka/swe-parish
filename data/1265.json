@@ -1,1 +1,1 @@
-[{"pid":1265,"charid":"hamra2","forkod":216102,"name":"hamra","county":"21","links":[null]}]
+[{"pid":1265,"charid":"hamra2","forkod":216102,"name":"hamra","county":"21","links":[null],"nads":[{"nadkod":216102000,"socken":"Hamra (x-län)","from":1931,"tom":9999,"rel":[{"nadkod":216103001,"socken":"Los","relation":"pre","from":1748,"tom":1930}]}]}]

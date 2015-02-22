@@ -1,1 +1,1 @@
-[{"pid":2596,"charid":"nybrokbfd","forkod":88100,"indelning":"1932-01-01 bildat inom Madesjö församling, 1938-12-31 upplöst vid församlingsdelning.","name":"Nybro kbfd","county":"8","links":[null]}]
+[{"pid":2596,"charid":"nybrokbfd","forkod":88100,"indelning":"1932-01-01 bildat inom Madesjö församling, 1938-12-31 upplöst vid församlingsdelning.","name":"Nybro kbfd","county":"8","links":[null],"nads":[{"nadkod":88101000,"socken":"Nybro","from":1939,"tom":9999,"rel":[{"nadkod":88105002,"socken":"Madesjö","relation":"pre","from":1894,"tom":1938}]}]}]

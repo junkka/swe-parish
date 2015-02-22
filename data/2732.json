@@ -1,1 +1,1 @@
-[{"pid":2732,"charid":"oscar1","forkod":18011,"indelning":"1906-05-01 utbruten ur Hedvig Eleonora.","name":"Oscar","namn":"1906-05-01-1961 Oskar, 1962- Oscar.","pastorat":"eget.","county":"1","links":[null]}]
+[{"pid":2732,"charid":"oscar1","forkod":18011,"indelning":"1906-05-01 utbruten ur Hedvig Eleonora.","name":"Oscar","namn":"1906-05-01-1961 Oskar, 1962- Oscar.","pastorat":"eget.","county":"1","links":[null],"nads":[{"nadkod":18011000,"socken":"Oscar","from":1906,"tom":9999,"rel":[{"nadkod":18010001,"socken":"Hedvig eleonora","relation":"pre","from":0,"tom":1905}]}]}]

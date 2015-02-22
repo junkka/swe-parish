@@ -1,1 +1,1 @@
-[{"pid":1154,"charid":"gunnared","forkod":148034,"indelning":"1971-01-01 utbruten ur Angered.","name":"Gunnared","pastorat":"eget.","county":"14","links":[null]}]
+[{"pid":1154,"charid":"gunnared","forkod":148034,"indelning":"1971-01-01 utbruten ur Angered.","name":"Gunnared","pastorat":"eget.","county":"14","links":[null],"nads":[{"nadkod":148034000,"socken":"Gunnared","from":1971,"tom":9999,"rel":[{"nadkod":148026001,"socken":"Angered","relation":"pre","from":0,"tom":1970}]}]}]

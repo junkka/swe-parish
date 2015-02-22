@@ -1,1 +1,1 @@
-[{"pid":4151,"charid":"vasterled","forkod":18029,"indelning":"1955-01-01 utbruten ur Bromma.","name":"Västerled","pastorat":"1955-01-01-1961 Västerled och Essinge, 1962- eget.","county":"1","links":[null]}]
+[{"pid":4151,"charid":"vasterled","forkod":18029,"indelning":"1955-01-01 utbruten ur Bromma.","name":"Västerled","pastorat":"1955-01-01-1961 Västerled och Essinge, 1962- eget.","county":"1","links":[null],"nads":[{"nadkod":18029000,"socken":"Västerled","from":1955,"tom":9999,"rel":[{"nadkod":18027002,"socken":"Bromma (ab-län)","relation":"pre","from":1909,"tom":1954}]}]}]

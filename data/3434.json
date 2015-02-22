@@ -1,1 +1,1 @@
-[{"pid":3434,"charid":"Slottsstaden","forkod":128002,"indelning":"1949-01-01 utbruten ur Malmö Sankt Petri.","name":"Slottsstaden","pastorat":"eget.","county":"12","links":[null]}]
+[{"pid":3434,"charid":"Slottsstaden","forkod":128002,"indelning":"1949-01-01 utbruten ur Malmö Sankt Petri.","name":"Slottsstaden","pastorat":"eget.","county":"12","links":[null],"nads":[{"nadkod":128002000,"socken":"Slottsstaden","from":1949,"tom":9999,"rel":[{"nadkod":128001003,"socken":"Malmö sankt petri","relation":"pre","from":1906,"tom":1948}]}]}]

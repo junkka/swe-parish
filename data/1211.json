@@ -1,1 +1,1 @@
-[{"pid":1211,"charid":"hakkas","forkod":252304,"indelning":"1962-01-01 utbruten ur Gällivare, motsvarande Hakkas kbfd.","name":"hakkas","pastorat":"eget.","pastoratskod":111206,"county":"25","links":[null]}]
+[{"pid":1211,"charid":"hakkas","forkod":252304,"indelning":"1962-01-01 utbruten ur Gällivare, motsvarande Hakkas kbfd.","name":"hakkas","pastorat":"eget.","pastoratskod":111206,"county":"25","links":[null],"nads":[{"nadkod":252304000,"socken":"Hakkas","from":1962,"tom":9999,"rel":[{"nadkod":252371001,"socken":"Gällivare","relation":"pre","from":1742,"tom":1961}]}]}]

@@ -1,1 +1,1 @@
-[{"pid":1008,"charid":"gavlestaffan","forkod":218002,"indelning":"1916-05-01 utbruten ur Gävle (Heliga Trefaldighet).","name":"Gävle Staffan","pastorat":"eget.","county":"21","alias":"Staffan","links":[null]}]
+[{"pid":1008,"charid":"gavlestaffan","forkod":218002,"indelning":"1916-05-01 utbruten ur Gävle (Heliga Trefaldighet).","name":"Gävle Staffan","pastorat":"eget.","county":"21","alias":"Staffan","links":[null],"nads":[{"nadkod":218002000,"socken":"Gävle staffan","from":1916,"tom":9999,"rel":[{"nadkod":218001001,"socken":"Gävle","relation":"pre","from":0,"tom":1915}]}]}]

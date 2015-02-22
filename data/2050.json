@@ -1,1 +1,1 @@
-[{"pid":2050,"charid":"lessebokbfd","forkod":76100,"indelning":"1942-01-01 bildat inom Hovmantorps församling, 1960-12-31 upplöst vid församlingsdelning.","name":"Lessebo kbfd","county":"7","links":[null]}]
+[{"pid":2050,"charid":"lessebokbfd","forkod":76100,"indelning":"1942-01-01 bildat inom Hovmantorps församling, 1960-12-31 upplöst vid församlingsdelning.","name":"Lessebo kbfd","county":"7","links":[null],"nads":[{"nadkod":76101000,"socken":"Lessebo","from":1961,"tom":9999,"rel":[{"nadkod":76102001,"socken":"Hovmantorp","relation":"pre","from":0,"tom":1960}]}]}]

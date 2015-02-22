@@ -1,1 +1,1 @@
-[{"pid":2948,"charid":"rasunda","forkod":18402,"indelning":"1963 utbruten ur Solna.","name":"Råsunda","pastorat":"eget.","county":"1","links":[null]}]
+[{"pid":2948,"charid":"rasunda","forkod":18402,"indelning":"1963 utbruten ur Solna.","name":"Råsunda","pastorat":"eget.","county":"1","links":[null],"nads":[{"nadkod":18402000,"socken":"Råsunda","from":1963,"tom":9999,"rel":[{"nadkod":18401002,"socken":"Solna","relation":"pre","from":0,"tom":1962}]}]}]

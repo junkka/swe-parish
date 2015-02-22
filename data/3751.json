@@ -1,1 +1,1 @@
-[{"pid":3751,"charid":"teg","forkod":248004,"indelning":"1963 utbruten ur Umeå landsförsamling.","name":"Teg","pastorat":"eget.","county":"24","links":[null]}]
+[{"pid":3751,"charid":"teg","forkod":248004,"indelning":"1963 utbruten ur Umeå landsförsamling.","name":"Teg","pastorat":"eget.","county":"24","links":[null],"nads":[{"nadkod":248004000,"socken":"Teg","from":1963,"tom":9999,"rel":[{"nadkod":248002009,"socken":"Umeå lands","relation":"pre","from":1913,"tom":1962}]}]}]
