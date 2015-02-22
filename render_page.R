@@ -28,7 +28,7 @@ render_page <- function(clean = FALSE) {
       writeLines(toJSON(a, pretty = F), sprintf('output/data/%d.json', a$pid))
     })
 
-    json <- sfgt[ ,c(1,5, 7:12,14:15)]
+    json <- sfgt[ ,c(1,5, 7:12,14:16)]
     writeLines(toJSON(json, pretty = F), 'output/data/parishes.json')
 
   }

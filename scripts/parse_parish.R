@@ -260,3 +260,36 @@ f <- function(x) {
 for_hist <- sfgt %>% mutate_each(funs(f))
 
 save(for_hist, file = "data/for_hist.rda")
+
+load("data/for_hist.rda")
+
+# Add aliases to for_hist
+
+aliases <- for_hist %>% 
+  mutate(
+    ovrigt2 = str_trim(str_replace(ovrigt, "\\.", ""))
+  ) %>% 
+  filter(
+    is.na(link2), 
+    !is.na(link1),
+    is.na(fodelsebok),
+    is.na(lan),
+    is.na(namn),
+    is.na(husforhorslangd),
+    is.na(indelning),
+    is.na(pastorat),
+    is.na(pastoratskod),
+    (forkod %% 100 ) == 0,
+    !is.na(ovrigt)
+  ) %>% 
+  select(name, link1, pid) 
+
+gr_aliases <- aliases %>% 
+  group_by(link1) %>% 
+  summarise(alias = paste(name, collapse = ", "))
+
+for_hist <- tbl_df(for_hist) %>% 
+  filter(!pid %in% aliases$pid) %>% 
+  left_join(gr_aliases, by = c("charid" = "link1"))
+
+save(for_hist, file = "data/for_hist.rda")
