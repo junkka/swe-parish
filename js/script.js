@@ -71,6 +71,13 @@ parishApp.controller('ParishCtrl', function ($scope, $http, $routeParams){
     
   });
 
+  $scope.get_relation = function(rel){
+    if (rel == "succ") {
+      return "Efter";
+    } else {
+      return "Innan"
+    }
+  }
 
   $scope.countName = function(code){
     if (!code){

@@ -1,5 +1,5 @@
 # clean_parse.R
-pkgs <- c("rcustom", "stringr", "dplyr")
+pkgs <- c("rcustom", "stringr", "historicalmaps", "dplyr")
 lapply(pkgs, library, character.only=T)
 
 load('data/for_hist.rda')
@@ -35,5 +35,31 @@ a <- plyr::dlply(sfgt2, "pid", function(x){
 })
 sfgt3 <- sfgt
 sfgt3$links <- a
+# for each pid get nadkod as data.frame
+data(nad_to_pid)
+data(parish_meta)
+
+b <- plyr::llply(unique(sfgt3$pid), function(x){
+  dat <- nad_to_pid %>% filter(pid == x) %>% 
+    left_join(parish_meta, by = "nadkod") %>% 
+    select(nadkod, socken, from, tom) %>% 
+    arrange(from)
+  if (nrow(dat) < 1) {
+    return(NA)
+  }
+  # get relations
+  bb <- plyr::llply(dat$nadkod, function(y){
+    rel <- parish_relations %>% 
+      filter(nadkod == y) %>% 
+      select(nadkod = nadkod2, relation) %>% 
+      left_join(parish_meta, by = "nadkod") %>% 
+      select(nadkod, socken, relation, from, tom) %>% 
+      arrange(tom)
+  })
+  dat$rel <- bb
+  return(dat)
+
+})
+sfgt3$nads <- b
 sfgt <- sfgt3 %>% select(-link1:-link4)
 save(sfgt, file = "data/sfgt.rda")

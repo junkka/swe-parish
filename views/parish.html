@@ -40,6 +40,33 @@
         <dd ng-show="parish.arkiv">{{parish.arkiv}}</dd>
       </dl>
     </div>
+    <div class="col-md-12" ng-show="parish.nads[0]">
+        <h3>NAD-relationer</h3>
+        <div class="row" ng-repeat="nad in parish.nads">
+            <div class="col-sm-6">
+                <dl class="dl-horizontal">
+                    <dt ng-show="nad.socken">Nad socken</dt>
+                    <dd ng-show="nad.socken">{{nad.socken}}</dd>
+                    <dt ng-show="nad.nadkod">Nadkod</dt>
+                    <dd ng-show="nad.nadkod">{{nad.nadkod}}</dd>
+                    <dt ng-show="nad.tom">Tid</dt>
+                    <dd ng-show="nad.tom">{{nad.from}} - {{nad.tom}}</dd>
+                </dl>
+            </div>
+            <div class="col-sm-6" ng-show="nad.rel">
+                <dl class="dl-horizontal" >
+                  <span ng-repeat="re in nad.rel">
+                    <dt>{{get_relation(re.relation)}}</dt>
+                    <dd>
+                        {{re.socken}} {{re.nadkod}} <br>
+                        {{re.from}} - {{re.tom}}
+                    </dd>
+                  </span>
+                </dl>
+            </div>
+        </div>
+        
+    </div>
     
     <div id="map" class="col-md-12 parish-map"></div>
     
