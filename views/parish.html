@@ -39,15 +39,16 @@
         <dt ng-show="parish.arkiv">Arkiv</dt>
         <dd ng-show="parish.arkiv">{{parish.arkiv}}</dd>
       </dl>
+      <hr>
     </div>
     <div class="col-md-12" ng-show="parish.nads[0]">
-        <h3>NAD-relationer</h3>
+        <h4>Administrativ historik</h4>
         <div class="row" ng-repeat="nad in parish.nads">
             <div class="col-sm-6">
                 <dl class="dl-horizontal">
-                    <dt ng-show="nad.socken">Nad socken</dt>
+                    <dt ng-show="nad.socken">Namn</dt>
                     <dd ng-show="nad.socken">{{nad.socken}}</dd>
-                    <dt ng-show="nad.nadkod">Nadkod</dt>
+                    <dt ng-show="nad.nadkod">Geo-id</dt>
                     <dd ng-show="nad.nadkod">{{nad.nadkod}}</dd>
                     <dt ng-show="nad.tom">Tid</dt>
                     <dd ng-show="nad.tom">{{nad.from}} - {{nad.tom}}</dd>

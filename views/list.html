@@ -8,11 +8,16 @@
       </div>
     </div>
     <div class="row" ng-hide="dataLoading">
+      <div class="col-md-12" ng-hide="dataLoading" style="margin-bottom: 10px;">
+        <input type="text" class="form-control" id="exampleInputEmail2" placeholder="Sök" ng-model="fulltext">
+      </div>
       <div class="col-md-12" ng-hide="dataLoading">
-        
         <form class="form-inline" role="form">
+
           <div class="form-group">
-              <input type="text" class="form-control" id="exampleInputEmail2" placeholder="Namn" ng-model="fulltext">
+            <div class="input-group">
+              <input type="text" class="form-control" id="inputName" placeholder="Namn" ng-model="nametext">
+            </div>
           </div>
           <div class="form-group">
             <select class="form-control" ng-model="selected_county" ng-options="co.cname for co in counties">
@@ -47,7 +52,7 @@
         </nav>    
       </div>
       <div class="col-md-12">
-        <div class="row" ng-repeat="par in filteredPars = (parishes | filter: {county: selected_county.county}:true | filter: search | filter: filterText | offset:currentPage*pageSize | limitTo:pageSize)" >
+        <div class="row" ng-repeat="par in filteredPars = (parishes | filter: {county: selected_county.county}:true | filter: search | filter: filterText | filter: filterName | offset:currentPage*pageSize | limitTo:pageSize)" >
           <hr>
           <div class="col-md-3 list-title">
             <div class="row">
