@@ -7,6 +7,7 @@ parishApp.factory('Store', function() {
       currentPage: 0,
       county: '',
       forkod: '',
+      nametext: '',
       fulltext: '' };
 });
 
@@ -87,7 +88,7 @@ parishApp.controller('ParishCtrl', function ($scope, $http, $routeParams){
     return  results[0].cname;
   }
 
-  var render_highmap = function(d, data) {;
+  var render_highmap = function(d, data) {
     map = new Highcharts.Map({
       chart: {
         renderTo: 'map',
@@ -133,7 +134,6 @@ parishApp.controller('ParishCtrl', function ($scope, $http, $routeParams){
   }
 })
 
-
 parishApp.controller('MainCtrl', function($scope, $http, $timeout, Store) {
   $scope.pageSize = 20;
   $scope.currentPage = Store.currentPage;
@@ -144,6 +144,7 @@ parishApp.controller('MainCtrl', function($scope, $http, $timeout, Store) {
   };
   $scope.selected_county = Store.county;
   $scope.fulltext = Store.fulltext;
+  $scope.nametext = Store.nametext;
   $scope.counties = countiesStore;
   
   $scope.countName = function(code){
@@ -168,11 +169,13 @@ parishApp.controller('MainCtrl', function($scope, $http, $timeout, Store) {
   $scope.clear = function() {
     $scope.search = "";
     $scope.fulltext = "";
+    $scope.nametext = "";
     $scope.selected_county = "";
     $scope.currentPage = 0;
     Store.fulltext = '';
     Store.county = '';
     Store.forkod = '';
+    Store.nametext = '';
     Store.currentPage = 0;
   }
 
@@ -202,6 +205,21 @@ parishApp.controller('MainCtrl', function($scope, $http, $timeout, Store) {
       filterTextTimeout = $timeout(function() {
           $scope.filterText = tempFilterText;
           Store.fulltext = tempFilterText;
+          if (newval !== oldval) {
+            Store.currentPage = 0;
+            $scope.currentPage = 0;  
+          }
+      }, 500); // delay 250 ms
+      // }
+  })
+  $scope.$watch('nametext', function (newval, oldval) {
+      if (filterTextTimeout) $timeout.cancel(filterTextTimeout);
+      
+    // if (newval !== oldval){
+      tempFilterText = newval;
+      filterTextTimeout = $timeout(function() {
+          $scope.filterName = {name: tempFilterText};
+          Store.nametext = tempFilterText;
           if (newval !== oldval) {
             Store.currentPage = 0;
             $scope.currentPage = 0;  
