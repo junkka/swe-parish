@@ -31,7 +31,7 @@
           <button ng-click="clear()" class="btn btn-default">Rensa</button>
         </form>
         <p>
-          {{allPars = (parishes | filter: {county: selected_county.county}:true | filter: search.forkod | filter: filterText).length}}/{{parishes.length}}
+          {{allPars = (parishes | filter: {county: selected_county.county}:true | filter: search.forkod | filter: filterName| filter: filterText).length}}/{{parishes.length}}
         </p>
       
       </div>
