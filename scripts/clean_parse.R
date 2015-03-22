@@ -49,13 +49,17 @@ b <- plyr::llply(unique(sfgt3$pid), function(x){
   if (nrow(dat) < 1) {
     return(NA)
   }
+  ntp <- nad_to_pid %>% group_by(nadkod) %>% 
+    filter(row_number() == 1)
   # get relations
   bb <- plyr::llply(dat$nadkod, function(y){
+    # add relaion pid to 
     rel <- parish_relations %>% 
       filter(nadkod == y) %>% 
       select(nadkod = nadkod2, relation) %>% 
       left_join(parish_meta, by = "nadkod") %>% 
-      select(nadkod, socken, relation, from, tom) %>% 
+      left_join(ntp, by = "nadkod") %>% 
+      select(nadkod, socken, relation, from, tom, pid) %>% 
       arrange(tom)
   })
   dat$rel <- bb
