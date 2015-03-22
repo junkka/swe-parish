@@ -2,16 +2,19 @@
 
 # For each county get map and write geojson
 
-library(historicalmaps)
+library(histmaps)
 library(dplyr)
 library(rgdal)
 
 dir.create('output/data', showWarnings = FALSE)
 # get all counties
-lanskod <- nad_sp@data %>% select(lanskod) %>% distinct() %>% .$lanskod
+
+lanskod <- hist_boundaries(1990, "county", "meta") %>% .$lan
+
+map_d <- hist_boundaries(1990, "par")
 
 plyr::l_ply(lanskod, function(a){
-  dat <- nad_sp[nad_sp@data$lanskod == a & nad_sp@data$tom == 9999, ]
+  dat <- subset(map_d, county == a)
   writeOGR(dat, sprintf("output/data/map%s.geo.json", a), "svelan", driver = "GeoJSON")
 })
 

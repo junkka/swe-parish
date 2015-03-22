@@ -1,14 +1,14 @@
 # link to nadkod 
 load("data/for_hist.rda")
 
-library(historicalmaps)
+library(histmaps)
 library(stringr)
 library(dplyr)
 
-data(parish_meta)
+data(hist_parish)
+parish_meta <- slot(hist_parish, "data")
 
 # add pid to all parish_meta s 
-
 
 linked1 <- left_join(tbl_df(for_hist), parish_meta, by = "forkod") %>% 
   filter(!is.na(nadkod)) %>% 

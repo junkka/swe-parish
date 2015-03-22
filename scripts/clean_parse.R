@@ -1,5 +1,5 @@
 # clean_parse.R
-pkgs <- c("rcustom", "stringr", "historicalmaps", "dplyr")
+pkgs <- c("rcustom", "stringr", "histmaps", "dplyr")
 lapply(pkgs, library, character.only=T)
 
 load('data/for_hist.rda')
@@ -37,7 +37,8 @@ sfgt3 <- sfgt
 sfgt3$links <- a
 # for each pid get nadkod as data.frame
 data(nad_to_pid)
-data(parish_meta)
+data(hist_parish)
+parish_meta <- slot(hist_parish, "data")
 
 b <- plyr::llply(unique(sfgt3$pid), function(x){
   dat <- nad_to_pid %>% filter(pid == x) %>% 
