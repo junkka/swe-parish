@@ -1,1 +1,1 @@
-[{"pid":2733,"charid":"oscar1minne","forkod":18000,"name":"Oscar I","ovrigt":"se .","county":"1","links":[null],"nads":[{"nadkod":18011000,"socken":"Oscar","from":1906,"tom":9999,"rel":[{"nadkod":18010001,"socken":"Hedvig eleonora","relation":"pre","from":0,"tom":1905}]}]}]
+[{"pid":2733,"charid":"oscar1minne","forkod":18000,"name":"Oscar I","ovrigt":"se .","county":"1","links":[null],"nads":[{"nadkod":18011000,"socken":"Oscar","from":1906,"tom":9999,"rel":[{"nadkod":18010001,"socken":"Hedvig eleonora","relation":"pre","from":0,"tom":1905,"pid":1353}]}]}]

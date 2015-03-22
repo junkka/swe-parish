@@ -59,7 +59,7 @@
                   <span ng-repeat="re in nad.rel">
                     <dt>{{get_relation(re.relation)}}</dt>
                     <dd>
-                        {{re.socken}} {{re.nadkod}} <br>
+                        <a href="#/parish/{{re.pid}}">{{re.socken}} {{re.nadkod}}</a><br>
                         {{re.from}} - {{re.tom}}
                     </dd>
                   </span>

@@ -1,1 +1,1 @@
-[{"pid":1530,"charid":"hurud","forkod":178400,"name":"hurud","county":"17","links":[[{"id":1439,"name":"högerud"}]],"nads":[{"nadkod":178404000,"socken":"Högerud","from":1646,"tom":9999,"rel":[{"nadkod":178403001,"socken":"Stavnäs","relation":"pre","from":0,"tom":1645}]}]}]
+[{"pid":1530,"charid":"hurud","forkod":178400,"name":"hurud","county":"17","links":[[{"id":1439,"name":"högerud"}]],"nads":[{"nadkod":178404000,"socken":"Högerud","from":1646,"tom":9999,"rel":[{"nadkod":178403001,"socken":"Stavnäs","relation":"pre","from":0,"tom":1645,"pid":3556}]}]}]
