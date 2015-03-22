@@ -1,4 +1,5 @@
 deploy.sh
-data/
+data/*
+!data/.gitkeep
 output/
 scripts/.cache/

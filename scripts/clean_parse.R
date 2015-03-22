@@ -38,7 +38,8 @@ sfgt3$links <- a
 # for each pid get nadkod as data.frame
 data(nad_to_pid)
 data(hist_parish)
-parish_meta <- slot(hist_parish, "data")
+parish_meta <- slot(hist_parish, "data") %>% 
+  mutate(socken = Hmisc::capitalize(tolower(socken)))
 
 b <- plyr::llply(unique(sfgt3$pid), function(x){
   dat <- nad_to_pid %>% filter(pid == x) %>% 

@@ -6,7 +6,8 @@ library(stringr)
 library(dplyr)
 
 data(hist_parish)
-parish_meta <- slot(hist_parish, "data")
+parish_meta <- slot(hist_parish, "data") %>% 
+  mutate(lanskod = floor(nadkod/10000000))
 
 # add pid to all parish_meta s 
 

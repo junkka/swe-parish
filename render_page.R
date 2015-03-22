@@ -6,6 +6,7 @@ render_page <- function(clean = FALSE) {
   }
   if (!file.exists('data/sfgt.rda')){
     source('scripts/parse_parish.R')
+    source('scripts/link_to_nadkod.R')
     source('scripts/clean_parse.R')
   }
   if (clean) {
