@@ -11,7 +11,7 @@ parishApp.factory('Store', function() {
       fulltext: '' };
 });
 
-parishApp.config(function ($routeProvider) {
+parishApp.config(function ($routeProvider, $locationProvider) {
     $routeProvider
       .when('/', {
         templateUrl: 'views/list.html',
@@ -24,6 +24,8 @@ parishApp.config(function ($routeProvider) {
       .otherwise({
         redirectTo: '/'
       });
+      
+      $locationProvider.html5Mode(true);
   });
 
 parishApp.filter('offset', function() {
