@@ -30,7 +30,12 @@ render_page <- function(clean = FALSE) {
 
     json <- sfgt[ ,c(1,5, 7:12,14:16)]
     writeLines(toJSON(json, pretty = F), 'output/data/parishes.json')
-
+    
+    source("gen_sitemap.R")
+    write(gen_sitemap(sfgt$pid), sep = "\n", file = "output/sitemap.xml")
   }
+  
+  write("Sitemap: http://johanjunkka.com/swe-patish/sitemap.xml", file = "output/robots.txt")
+  
   render('index.Rmd', output_dir='output')
 }
