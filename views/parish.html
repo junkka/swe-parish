@@ -2,7 +2,7 @@
   <div class="row">
     <div class="col-md-12">
         <h1 class="brand">
-          <a href="/">Församlingar i Sverige genom tiderna</a>
+          <a href="#/">Församlingar i Sverige genom tiderna</a>
         </h1>
         <hr>
       </div>
@@ -24,7 +24,7 @@
         <dd ng-show="parish.lan">{{parish.lan}}</dd>
         <dt ng-show="parish.links[0]">Länkar</dt>
         <dd ng-show="parish.links[0]" ng-repeat="link in parish.links">
-          <a ng-href="#/parish/{{link[0].id}}">{{link[0].name}}</a>
+        <a ng-href="#/parish/{{link[0].id}}">{{link[0].name}}</a>
         </dd>
         <dt ng-show="parish.ovrigt">Övrigt</dt>
         <dd ng-show="parish.ovrigt">{{parish.ovrigt}}</dd>
@@ -59,7 +59,7 @@
                   <span ng-repeat="re in nad.rel">
                     <dt>{{get_relation(re.relation)}}</dt>
                     <dd>
-                        <a href="parish/{{re.pid}}">{{re.socken}} {{re.nadkod}}</a><br>
+                        <a href="#/parish/{{re.pid}}">{{re.socken}} {{re.nadkod}}</a><br>
                         {{re.from}} - {{re.tom}}
                     </dd>
                   </span>
