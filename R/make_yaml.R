@@ -26,6 +26,7 @@ html_parish <- function(css = NULL, ...){
 }
 
 to_yaml <- function(d, temp_dir = tempdir()){
+  library(yaml)
   a <- as.list(d[ ,c(1:15, 18)])
   a <- a[lapply(a, function(x) is.na(x)) == FALSE]
   if (all(!is.na(d$links[[1]][[1]])))
