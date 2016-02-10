@@ -13,7 +13,7 @@ gen_sitemap <- function(x){
   item <- c()
   for (i in x){
     item <- c(item, paste0('      <url>
-        <loc>http://johanjunkka.com/swe-parish/parish/', i, '</loc>
+        <loc>http://johanjunkka.com/swe-parish/parish/', i, '.html</loc>
         <lastmod>', today, '</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.5</priority>
