@@ -1,0 +1,11 @@
+---
+meta-title: Församlingar genom historien
+meta-author: Johan Junkka
+output: 
+  html_parish:
+    template: includes/body-parish.html
+    theme: null
+    highlight: null
+    css: ../css/style.css
+    self_contained: false
+---

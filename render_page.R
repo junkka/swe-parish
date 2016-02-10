@@ -24,12 +24,17 @@ render_page <- function(clean = FALSE) {
     library(jsonlite)
     load('data/sfgt.rda')
 
-    plyr::d_ply(sfgt, "pid", function(a){
-      writeLines(toJSON(a, pretty = F), sprintf('output/data/%d.json', a$pid))
-    })
+    # plyr::d_ply(sfgt, "pid", function(a){
+      # writeLines(toJSON(a, pretty = F), sprintf('output/data/%d.json', a$pid))
+    # })
 
     json <- sfgt[ ,c(1,5, 7:12,14:16)]
     writeLines(toJSON(json, pretty = F), 'output/data/parishes.json')
+    source("R/make_yaml.R")
+    render_parish(sfgt)
+    
+    source("gen_sitemap.R")
+    write(gen_sitemap(unique(sfgt$forkod)), 'output/sitemap.xml')
   }
   
   render('index.Rmd', output_dir='output')

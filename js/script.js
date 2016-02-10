@@ -11,7 +11,7 @@ parishApp.factory('Store', function() {
       fulltext: '' };
 });
 
-parishApp.config(function ($routeProvider) {
+parishApp.config(function ($routeProvider, $locationProvider) {
     $routeProvider
       .when('/', {
         templateUrl: 'views/list.html',

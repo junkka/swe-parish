@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"$if(lang)$ lang="$lang$" xml:lang="$lang$"$endif$>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="pandoc" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+$for(author-meta)$
+<meta name="author" content="$author-meta$" />
+$endfor$
+
+$if(date-meta)$
+<meta name="date" content="$date-meta$" />
+$endif$
+
+<title>$meta-title$</title>
+
+$for(header-includes)$
+$header-includes$
+$endfor$
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet">
+
+$for(css)$
+<link rel="stylesheet" href="$css$" $if(html5)$$else$type="text/css" $endif$/>
+$endfor$
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-45888442-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</head>
+
+<body>
+
+
+$for(include-before)$
+$include-before$
+$endfor$
+
+
+<div class="container parish-page">
+  <div class="row">
+    <div class="col-md-12">
+        <h1 class="brand">
+          <a href="/">Församlingar i Sverige genom tiderna</a>
+        </h1>
+        <hr>
+      </div>
+    <div class="col-md-12">
+      <h2>$parish.name$</h2>
+    </div>
+    <div class="col-md-12">
+      <dl class="dl-horizontal">
+        <dt class="parishid" value="$parish.forkod$">Forkod</dt>
+        <dd>$parish.forkod$</dd>
+        <dt>Namn</dt>
+        <dd>$parish.name$</dd>
+        $if(parish.alias)$
+        <dt>Alias</dt>
+        <dd>$parish.alias$</dd>
+        $endif$
+        $if(parish.indelning)$
+        <dt >Indelning</dt>
+        <dd >$parish.indelning$</dd>
+        $endif$
+        $if(parish.county)$
+        <dt class="parishcounty" value="$parish.county$">Län</dt>
+        <dd>$parish.county$</dd>
+        <dd>$parish.lan$</dd>
+        $endif$
+        $if(parish.links)$
+        <dt>Länkar</dt>
+        <dd>
+        $for(parish.links)$
+        <a href="$parish.links.id$.html">$parish.links.name$</a>
+        $endfor$
+        </dd>
+        $endif$
+        $if(parish.ovrigt)$
+        <dt>Övrigt</dt>
+        <dd>$parish.ovrigt$</dd>
+        $endif$
+        $if(parish.pastoratskod)$
+        <dt>Pastoratskod</dt>
+        <dd>$parish.pastoratskod$</dd>
+        $endif$
+        $if(parish.pastorat)$
+        <dt>Pastorat</dt>
+        <dd>$parish.pastorat$</dd>
+        $endif$
+        $if(parish.fodelsebo)$
+        <dt>Födelsebok</dt>
+        <dd>$parish.fodelsebok$</dd>
+        $endif$
+        $if(parish.husforhorslangd)$
+        <dt>Husförhörslängd</dt>
+        <dd>$parish.husforhorslangd$</dd>
+        $endif$
+        $if(parish.arkiv)$
+        <dt>Arkiv</dt>
+        <dd>$parish.arkiv$</dd>
+        $endif$
+      </dl>
+      <hr>
+    </div>
+    $if(parish.nads)$
+    <div class="col-md-12">
+        <h4>Administrativ historik</h4>
+        
+        $for(parish.nads)$
+        <div class="row">
+            <div class="col-sm-6">
+                <dl class="dl-horizontal">
+                  $if(parish.nads.socken)$
+                    <dt>Namn</dt>
+                    <dd>$parish.nads.socken$</dd>
+                  $endif$  
+                  $if(parish.nads.nadkod)$
+                    <dt>Geo-id</dt>
+                    <dd>$parish.nads.nadkod$</dd>
+                  $endif$
+                  $if(parish.nads.tom)$
+                    <dt>Tid</dt>
+                    <dd>$parish.nads.from$ - $parish.nads.tom$</dd>
+                  $endif$
+                </dl>
+            </div>
+            $if(parish.nads.rel)$
+            <div class="col-sm-6">
+                <dl class="dl-horizontal" >
+                  <span>
+                    $for(parish.nads.rel)$
+                    <dt>$parish.nads.rel.relation$</dt>
+                    <dd>
+                        <a href="$parish.nads.rel.pid$.html">$parish.nads.rel.socken$ $parish.nads.rel.nadkod$</a><br>
+                        $parish.nads.rel.from$ - $parish.nads.rel.tom$
+                    </dd>
+                    $endfor$
+                  </span>
+                </dl>
+            </div>
+            $endif$
+        </div>
+        $endfor$
+    </div>
+    $endif$
+<!--    -->
+    <div id="map" class="col-md-12 parish-map"></div>
+    
+  </div>
+</div>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+<script src="//code.highcharts.com/highcharts.js"></script>
+<script src="//code.highcharts.com/maps/modules/map.js"></script>
+<script type="text/javascript" src="../js/parish.js"></script>
+
+
+
+</body>
+</html>
