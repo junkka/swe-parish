@@ -56,7 +56,7 @@
           <hr>
           <div class="col-md-3 list-title">
             <div class="row">
-              <a ng-href="#/parish/{{par.pid}}">
+              <a ng-href="parish/{{par.pid}}.html">
                 <div class="col-xs-6 col-md-12"><strong>{{par.name}}</strong> <span class="hidden-md hidden-lg">{{par.forkod}}</span></div>
                 <div class="col-xs-6 col-md-12"><span class="visible-md-block visible-lg-block">{{par.forkod}}</span></div>
               </a> 
@@ -71,7 +71,7 @@
               <p ng-show="par.ovrigt"><strong>Övrigt:</strong> {{par.ovrigt}}</p>
               <p ng-show="par.pastorat"><strong>Pastorat:</strong> {{par.pastorat}}</p>
               <p ng-repeat="link in par.links">
-              <a ng-href="#/parish/{{link[0].id}}">{{link[0].name}}</a>
+              <a ng-href="parish/{{link[0].id}}.html">{{link[0].name}}</a>
             </p>
             
           </div>
