@@ -19,6 +19,7 @@ render_page <- function(clean = FALSE) {
   file.copy('views', 'output', recursive = TRUE)
   file.copy('js', 'output', recursive = TRUE)
   file.copy('css', 'output', recursive = TRUE)
+  file.copy('static/robots.txt', 'output')
   
   if (clean) {
     library(jsonlite)
