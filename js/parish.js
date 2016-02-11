@@ -93,4 +93,4 @@ var render_highmap = function(d, b, data) {
 
       
       
-}
+};

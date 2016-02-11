@@ -8,7 +8,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
 
-<title>Församlingar genom historien</title>
+<title>Karta | Församlingar genom historien</title>
 
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet">
 
@@ -29,8 +29,20 @@
 <body>
 
 
-<div  ng-app="parishApp">
-  <div ng-view></div>
+
+<div class="container parish-page">
+  <div class="row">
+    <div class="col-md-12">
+      <h1 class="brand">
+        <a href="/swe-parish/">Församlingar i Sverige genom tiderna</a>
+      </h1>
+      <hr>
+    </div>
+  </div>
+
+  <div class="row">
+    <div id="fullmap" class="col-md-12 fullmap"></div>
+  </div>
 </div>
 <div class="container footer">
   <div class="row">

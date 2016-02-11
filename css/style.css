@@ -16,6 +16,12 @@
   font-size: 100%;
 }
 
+.fullmap {
+  position: relative; 
+  width: 100%; 
+  height: 600px;
+}
+
 .parish-map {
   position: relative; 
   width: 100%; 
