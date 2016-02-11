@@ -8,7 +8,6 @@ $(document).ready(function() {
     async: true,
     dataType: "json",
     success: function (b) {
-      console.log(b);
       $.ajax({
         url: '../data/map' + county + '.geo.json',
         type: 'GET',
@@ -36,6 +35,7 @@ var map_data = function(d, parish){
     ret.push({
       code: data[i].properties.forkod,
       socken: data[i].properties.socken,
+      pid: data[i].properties.pid,
       color: val
     });
   }
@@ -74,10 +74,23 @@ var render_highmap = function(d, b, data) {
       mapData: d,
       name: 'Parish',
       joinBy: ['forkod', 'code'],
+      allowPointSelect: true,
       tooltip: {
         headerFormat: '',
         pointFormat: '{point.socken} {point.forkod}'
       }
     }]
   });
+  
+  Highcharts.wrap(Highcharts.Point.prototype, 'select', function (proceed) {
+    
+    proceed.apply(this, Array.prototype.slice.call(arguments, 1));
+    var points = map.getSelectedPoints();
+    if (points.length) {
+      window.location.href = points[0].pid + ".html";
+    }
+  });
+
+      
+      
 }
