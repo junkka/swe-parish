@@ -32,3 +32,5 @@ plyr::l_ply(lanskod, function(a){
   writeOGR(dat, sprintf("output/data/map%s.geo.json", a), "svelan", driver = "GeoJSON")
   writeOGR(back, sprintf("output/data/back%s.geo.json", a), "background", driver = "GeoJSON")
 })
+
+writeOGR(county, "output/data/county.geo.json", "county", driver = "GeoJSON")

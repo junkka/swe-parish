@@ -35,4 +35,5 @@ render_page <- function(clean = FALSE) {
   }
   
   render('index.Rmd', output_dir='output')
+  render('map.Rmd', output_dir='output')
 }
