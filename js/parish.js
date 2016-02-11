@@ -3,12 +3,21 @@ $(document).ready(function() {
   var county = $('.parishcounty').attr('value');
 
   $.ajax({
-    url: '../data/map' + county + '.geo.json',
+    url: '../data/back' + county + '.geo.json',
     type: 'GET',
     async: true,
     dataType: "json",
-    success: function (d) {
-        render_highmap(d, map_data(d, parishid));
+    success: function (b) {
+      console.log(b);
+      $.ajax({
+        url: '../data/map' + county + '.geo.json',
+        type: 'GET',
+        async: true,
+        dataType: "json",
+        success: function (d) {
+            render_highmap(d, b, map_data(d, parishid));
+        }
+      });
     }
   });
 
@@ -20,20 +29,20 @@ var map_data = function(d, parish){
   var val;
   for (var i=0,  tot=data.length; i < tot; i++) {
     if (data[i].properties.forkod == parish) {
-      val = 1;
+      val = '#A28238';
     } else {
-      val = 0;
+      val = '#F6EBD3';
     }
     ret.push({
       code: data[i].properties.forkod,
       socken: data[i].properties.socken,
-      value: val
+      color: val
     });
   }
   return ret;
 };
 
-var render_highmap = function(d, data) {
+var render_highmap = function(d, b, data) {
   map = new Highcharts.Map({
     chart: {
       renderTo: 'map',
@@ -55,17 +64,12 @@ var render_highmap = function(d, data) {
       enabled: false
     },
     
-    colorAxis: {
-      min: 0,
-      minColor: '#EEEEFF',
-      maxColor: '#000022',
-      stops: [
-        [0, '#EFEFFF'],
-        [1, '#000022']
-        ]
-    },
-    
+   
     series : [{
+      mapData: b,
+      color: '#D8D8E7',
+      name: 'background'
+    },{
       data: data,
       mapData: d,
       name: 'Parish',
