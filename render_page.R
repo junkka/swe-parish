@@ -2,7 +2,7 @@ render_page <- function(clean = FALSE) {
   library(rmarkdown)
   if (!file.exists('scripts/.cache')){
     dir.create('scripts/.cache')
-    source('get_html_files')
+    source('scripts/get_html_files.R')
   }
   if (!file.exists('data/sfgt.rda')){
     source('scripts/parse_parish.R')
@@ -30,7 +30,7 @@ render_page <- function(clean = FALSE) {
     source("R/make_yaml.R")
     render_parish(sfgt)
     
-    source("gen_sitemap.R")
+    source("R/gen_sitemap.R")
     write(gen_sitemap(unique(sfgt$pid)), 'output/sitemap.xml')
   }
   
