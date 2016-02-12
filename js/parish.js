@@ -50,9 +50,9 @@ var render_highmap = function(d, b, data) {
       borderColor: '#D7D7D7'
     },      
     title: {
-      text: ''
+      text: '<button role="button" class="btn btn-defualt" ><a href="../map.html">Till översiktskarta</a></button>',
+      useHTML: true
     },
-    
     mapNavigation: {
       enabled: true,
       buttonOptions: {
@@ -75,6 +75,10 @@ var render_highmap = function(d, b, data) {
       name: 'Parish',
       joinBy: ['forkod', 'code'],
       allowPointSelect: true,
+      dataLabels: {
+        enabled: true,
+        format: '{point.socken}'
+      },
       tooltip: {
         headerFormat: '',
         pointFormat: '{point.socken} {point.forkod}'
